@@ -1,6 +1,6 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'slide_screens.dart';
-import 'main_page.dart';
 import 'notification_service.dart';
 
 Future<void> main() async {
@@ -9,7 +9,15 @@ Future<void> main() async {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return MyAppState();
+  }
+}
+
+class MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,14 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // home: MainPage(),
-      routes: {
-        // Main initial route
-        '/': (context) => SlideScreens(),
-        // Second route
-        '/second': (context) => MainPage(),
-      },
-      initialRoute: '/',
+      home: SlideScreens(),
     );
   }
 }
